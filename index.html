@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="dual">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F4F5F0" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0D1218" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Swindon Drive Pass UK · Practical Test Routes &amp; Tips (SN5 5BL)</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-bar" id="top-bar">
+      <div class="top-bar-inner">
+        <div class="brand-block">
+          <svg class="brand-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="currentColor" opacity="0.12" />
+            <circle cx="16" cy="16" r="9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="11 4" />
+            <circle cx="16" cy="16" r="3" fill="#C81E1E" />
+          </svg>
+          <div class="brand-text">
+            <h1 class="app-title">Swindon Drive Pass</h1>
+            <a class="centre-link mono" href="https://www.google.com/maps/search/?api=1&query=Swindon+Driving+Test+Centre+1+Fenn+Close+Peatmoor+Swindon+SN5+5BL" target="_blank" rel="noopener noreferrer">
+              1 Fenn Close · SN5 5BL
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="top-controls">
+          <div class="lang-switch" role="group" aria-label="Language mode / Idioma">
+            <button type="button" class="lang-btn" data-lang-mode="dual" aria-pressed="true">EN+ES</button>
+            <button type="button" class="lang-btn" data-lang-mode="en" aria-pressed="false">EN</button>
+            <button type="button" class="lang-btn" data-lang-mode="es" aria-pressed="false">ES</button>
+          </div>
+          <button type="button" id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode / Cambiar modo oscuro" aria-pressed="false">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="tab-nav" aria-label="Primary sections">
+        <div class="tablist scroller" role="tablist" focusgroup="tablist nomemory" aria-label="Swindon Driving Test Sections">
+          <button type="button" role="tab" id="tab-routes" aria-selected="true" focusgroupstart data-panel="panel-routes">
+            <span class="tab-label-en">Routes &amp; Maps</span>
+            <span class="tab-label-sep">/</span>
+            <span class="tab-label-es">Rutas</span>
+          </button>
+          <button type="button" role="tab" id="tab-hotspots" aria-selected="false" data-panel="panel-hotspots">
+            <span class="tab-label-en">Traps</span>
+            <span class="tab-label-sep">/</span>
+            <span class="tab-label-es">Pilladas</span>
+          </button>
+          <button type="button" role="tab" id="tab-videos" aria-selected="false" data-panel="panel-videos">
+            <span class="tab-label-en">Videos</span>
+            <span class="tab-label-sep">/</span>
+            <span class="tab-label-es">Vídeos</span>
+          </button>
+          <button type="button" role="tab" id="tab-practical" aria-selected="false" data-panel="panel-practical">
+            <span class="tab-label-en">Practical</span>
+            <span class="tab-label-sep">/</span>
+            <span class="tab-label-es">Examen</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content" id="main-content">
+      <div class="panels-grid">
+        <!-- TAB 1: ROUTES & GOOGLE MAPS -->
+        <section id="panel-routes" role="tabpanel" aria-labelledby="tab-routes" tabindex="0">
+          <div class="panel-inner">
+            <div class="status-banner" id="centre-briefing-card"></div>
+
+            <div class="toolbar">
+              <div class="search-wrap">
+                <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+                <input type="search" id="route-search" enterkeyhint="search" placeholder="Search street, roundabout / Busca calle o rotonda..." aria-label="Filter Swindon routes" />
+              </div>
+
+              <div class="filter-row scroller" role="group" aria-label="Route filters">
+                <button type="button" class="chip-btn is-active" data-route-filter="all">
+                  <span class="t-en">All (6)</span>
+                  <span class="t-es">Todas (6)</span>
+                </button>
+                <button type="button" class="chip-btn" data-route-filter="roundabouts">
+                  <span class="t-en">Multi-lane</span>
+                  <span class="t-es">Rotondas</span>
+                </button>
+                <button type="button" class="chip-btn" data-route-filter="rural">
+                  <span class="t-en">Rural + STOP</span>
+                  <span class="t-es">Rural + STOP</span>
+                </button>
+                <button type="button" class="chip-btn" data-route-filter="residential">
+                  <span class="t-en">Estates</span>
+                  <span class="t-es">Barrios</span>
+                </button>
+                <button type="button" class="chip-btn" data-route-filter="dual">
+                  <span class="t-en">A3102 / J16</span>
+                  <span class="t-es">Autovía</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="section-bar">
+              <h2 class="section-heading">
+                <span class="t-en">Swindon Test Route Patterns</span>
+                <span class="t-es">Patrones de Rutas en Swindon</span>
+              </h2>
+              <span class="progress-pill mono" id="routes-progress">0/6</span>
+            </div>
+
+            <div class="cards-list" id="routes-list"></div>
+          </div>
+        </section>
+
+        <!-- TAB 2: TRICKY ROUNDABOUTS & HOTSPOTS -->
+        <section id="panel-hotspots" role="tabpanel" aria-labelledby="tab-hotspots" hidden="until-found">
+          <div class="panel-inner">
+            <div class="section-bar">
+              <h2 class="section-heading">
+                <span class="t-en">High-Failure Swindon Traps &amp; Roundabouts</span>
+                <span class="t-es">Puntos Negros y Pilladas de Suspenso</span>
+              </h2>
+              <span class="progress-pill mono" id="hotspots-progress">0/8</span>
+            </div>
+
+            <div class="diagrams-grid">
+              <article class="diagram-card">
+                <h3 class="diagram-title">
+                  <span class="t-en">Spiral Roundabout Logic (The Meads / Mannington)</span>
+                  <span class="t-es">Cómo leer rotondas en espiral</span>
+                </h3>
+                <svg class="tactical-svg" viewBox="0 0 320 175" role="img" aria-label="Spiral roundabout lane diagram">
+                  <rect x="0" y="0" width="320" height="175" rx="10" class="svg-road-bg" />
+                  <circle cx="160" cy="88" r="64" class="svg-asphalt" />
+                  <circle cx="160" cy="88" r="24" class="svg-island" />
+                  <circle cx="160" cy="88" r="44" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.7" />
+                  <path d="M 160 152 L 160 132" stroke="#FFFFFF" stroke-width="2" />
+                  <path d="M 148 152 Q 120 120 134 72 Q 145 48 182 54" fill="none" stroke="#3898EC" stroke-width="3.5" stroke-linecap="round" />
+                  <polygon points="186,55 177,49 179,59" fill="#3898EC" />
+                  <path d="M 166 152 Q 194 128 192 84 Q 186 58 228 60" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" />
+                  <polygon points="233,60 224,55 224,65" fill="#10B981" />
+                  <text x="160" y="92" text-anchor="middle" class="svg-label-mono">SPIRAL</text>
+                  <text x="16" y="24" class="svg-caption">1. Pick lane on approach / Elige carril antes</text>
+                  <text x="16" y="164" class="svg-caption">2. Let white lines guide you out / No cortes líneas</text>
+                </svg>
+              </article>
+
+              <article class="diagram-card">
+                <h3 class="diagram-title">
+                  <span class="t-en">The Magic Roundabout (5 Mini-Roundabouts)</span>
+                  <span class="t-es">Magic Roundabout: Anillo interior antihorario</span>
+                </h3>
+                <svg class="tactical-svg" viewBox="0 0 320 175" role="img" aria-label="Swindon Magic Roundabout diagram">
+                  <rect x="0" y="0" width="320" height="175" rx="10" class="svg-road-bg" />
+                  <circle cx="160" cy="88" r="66" class="svg-asphalt" />
+                  <circle cx="160" cy="88" r="22" class="svg-island" />
+                  <path d="M 160 58 A 30 30 0 1 0 190 88" fill="none" stroke="#F59E0B" stroke-width="3" stroke-dasharray="4 3" />
+                  <polygon points="160,53 167,61 157,63" fill="#F59E0B" />
+                  <circle cx="160" cy="36" r="10" fill="#FFFFFF" stroke="#005EA5" stroke-width="2" />
+                  <circle cx="210" cy="70" r="10" fill="#FFFFFF" stroke="#005EA5" stroke-width="2" />
+                  <circle cx="192" cy="128" r="10" fill="#FFFFFF" stroke="#005EA5" stroke-width="2" />
+                  <circle cx="128" cy="128" r="10" fill="#FFFFFF" stroke="#005EA5" stroke-width="2" />
+                  <circle cx="110" cy="70" r="10" fill="#FFFFFF" stroke="#005EA5" stroke-width="2" />
+                  <text x="160" y="91" text-anchor="middle" class="svg-label-mono">CCW</text>
+                  <text x="16" y="24" class="svg-caption">Exits 1-2: outer clockwise / Por fuera</text>
+                  <text x="16" y="164" class="svg-caption">Exits 3-4: inner anti-clockwise / Anillo interior</text>
+                </svg>
+              </article>
+            </div>
+
+            <div class="accordion-bar">
+              <button type="button" class="toggle-all-btn" id="toggle-all-hotspots" commandfor="hotspots-accordion" command="--toggle-all" aria-expanded="false">
+                <span class="expand-label">
+                  <span class="t-en">Expand all</span>
+                  <span class="t-es">Abrir todos</span>
+                </span>
+                <span class="collapse-label">
+                  <span class="t-en">Collapse all</span>
+                  <span class="t-es">Cerrar todos</span>
+                </span>
+              </button>
+            </div>
+
+            <div class="accordion" id="hotspots-accordion"></div>
+          </div>
+        </section>
+
+        <!-- TAB 3: SWINDON VIDEOS -->
+        <section id="panel-videos" role="tabpanel" aria-labelledby="tab-videos" hidden="until-found">
+          <div class="panel-inner">
+            <div class="section-bar">
+              <h2 class="section-heading">
+                <span class="t-en">Verified Swindon Test Route Videos</span>
+                <span class="t-es">Vídeos Reales de Rutas en Swindon</span>
+              </h2>
+              <span class="progress-pill mono">9 videos</span>
+            </div>
+
+            <div class="filter-row scroller" role="group" aria-label="Filter videos by route">
+              <button type="button" class="chip-btn is-active" data-video-filter="all">
+                <span class="t-en">All (9)</span>
+                <span class="t-es">Todos (9)</span>
+              </button>
+              <button type="button" class="chip-btn" data-video-filter="route-1">Bruce St &amp; Meads</button>
+              <button type="button" class="chip-btn" data-video-filter="route-2">Nine Elms</button>
+              <button type="button" class="chip-btn" data-video-filter="route-3">Purton / Traps</button>
+              <button type="button" class="chip-btn" data-video-filter="route-5">Magic Roundabout</button>
+              <button type="button" class="chip-btn" data-video-filter="route-4">2026 Urban</button>
+            </div>
+
+            <div class="videos-grid" id="videos-list"></div>
+          </div>
+        </section>
+
+        <!-- TAB 4: PRACTICAL EXAM KIT (POST-THEORY) -->
+        <section id="panel-practical" role="tabpanel" aria-labelledby="tab-practical" hidden="until-found">
+          <div class="panel-inner">
+            <div class="section-bar">
+              <h2 class="section-heading">
+                <span class="t-en">Examiner Commands &amp; Show Me / Tell Me</span>
+                <span class="t-es">Frases del Examinador y Preguntas Prácticas</span>
+              </h2>
+              <span class="progress-pill mono" id="questions-progress">0/7</span>
+            </div>
+
+            <p class="practical-note">
+              <span class="t-en">Theory already passed: focus exclusively on practical commands, UK manoeuvres, and the 2-minute car safety checks asked at 1 Fenn Close.</span>
+              <span class="t-es">Teórico ya aprobado: aquí tienes solo lo que piden en el coche el día del examen práctico en Swindon.</span>
+            </p>
+
+            <h3 class="sub-heading">
+              <span class="t-en">1. Exact Examiner Phrases (EN → ES)</span>
+              <span class="t-es">1. Frases exactas del examinador y qué evalúan</span>
+            </h3>
+            <div class="phrases-list" id="phrases-list"></div>
+
+            <div class="section-bar spacing-top">
+              <h3 class="sub-heading">
+                <span class="t-en">2. Official DVSA Show Me / Tell Me</span>
+                <span class="t-es">2. Preguntas Show Me / Tell Me</span>
+              </h3>
+              <button type="button" class="toggle-all-btn" id="toggle-all-questions" commandfor="questions-accordion" command="--toggle-all" aria-expanded="false">
+                <span class="expand-label">
+                  <span class="t-en">Expand all</span>
+                  <span class="t-es">Abrir todas</span>
+                </span>
+                <span class="collapse-label">
+                  <span class="t-en">Collapse all</span>
+                  <span class="t-es">Cerrar todas</span>
+                </span>
+              </button>
+            </div>
+            <div class="accordion" id="questions-accordion"></div>
+
+            <h3 class="sub-heading spacing-top">
+              <span class="t-en">3. Four Official Practical Manoeuvres</span>
+              <span class="t-es">3. Las 4 maniobras oficiales del examen UK</span>
+            </h3>
+            <div class="manoeuvres-list" id="manoeuvres-list"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

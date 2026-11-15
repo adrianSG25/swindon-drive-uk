@@ -1,0 +1,19 @@
+{
+  "name": "Swindon Drive Pass UK",
+  "short_name": "Swindon Drive",
+  "description": "Guía móvil bilingüe (EN/ES) de rutas, rotondas, vídeos y Google Maps para aprobar el examen práctico de conducir en Swindon, UK.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F4F5F0",
+  "theme_color": "#005EA5",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
