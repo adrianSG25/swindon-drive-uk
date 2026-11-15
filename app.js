@@ -460,9 +460,11 @@ function activateTab(tab, { focus = false } = {}) {
     const isTarget = panel.id === targetPanelId;
     if (isTarget) {
       panel.hidden = false;
+      panel.removeAttribute("hidden");
       panel.setAttribute("tabindex", "0");
     } else {
       panel.hidden = "until-found";
+      panel.setAttribute("hidden", "until-found");
       panel.removeAttribute("tabindex");
     }
   }
@@ -533,25 +535,13 @@ function runToggleAll(button, accordion) {
 }
 
 function setupAccordions() {
-  document.addEventListener(
-    "command",
-    (event) => {
-      if (event.command !== "--toggle-all") return;
-      runToggleAll(event.source, event.target);
-    },
-    { capture: true }
-  );
-
-  // Fallback for browsers without native Invoker Commands
-  if (!Object.hasOwn(HTMLButtonElement.prototype, "commandForElement")) {
-    document.addEventListener("click", (event) => {
-      const btn = event.target.closest('[command="--toggle-all"]');
-      if (!btn) return;
-      const targetId = btn.getAttribute("commandfor");
-      const accordion = targetId ? document.getElementById(targetId) : null;
-      runToggleAll(btn, accordion);
-    });
-  }
+  document.addEventListener("click", (event) => {
+    const btn = event.target.closest(".toggle-all-btn");
+    if (!btn) return;
+    const targetId = btn.getAttribute("commandfor");
+    const accordion = targetId ? document.getElementById(targetId) : null;
+    runToggleAll(btn, accordion);
+  });
 
   document.addEventListener(
     "toggle",
@@ -564,40 +554,8 @@ function setupAccordions() {
   );
 }
 
-/* Scrollbar edge fade fallback + sticky header hide fallback (modern-web-guidance) */
-function setupProgressiveScrollFallbacks() {
-  if (!CSS.supports("animation-timeline", "scroll()")) {
-    for (const scroller of document.querySelectorAll(".scroller")) {
-      const [first, last] = [scroller.firstElementChild, scroller.lastElementChild];
-      if (!first || !last) continue;
-      const observer = new IntersectionObserver(
-        (entries) => {
-          for (const { target, intersectionRatio } of entries) {
-            scroller.classList.toggle(target === first ? "more-start" : "more-end", intersectionRatio < 1);
-          }
-        },
-        { root: scroller, threshold: 1, rootMargin: "1px" }
-      );
-      observer.observe(first);
-      observer.observe(last);
-    }
-  }
-
-  if (!CSS.supports("container-type", "scroll-state")) {
-    const bar = document.getElementById("top-bar");
-    let lastY = window.scrollY;
-    window.addEventListener(
-      "scroll",
-      () => {
-        const y = Math.max(0, Math.min(window.scrollY, document.documentElement.scrollHeight - window.innerHeight));
-        if (y === lastY || !bar) return;
-        bar.classList.toggle("is-hidden", y > lastY && y > bar.offsetHeight);
-        lastY = y;
-      },
-      { passive: true }
-    );
-  }
-}
+/* No scroll hide on top bar so tabs stay reachable on mobile */
+function setupProgressiveScrollFallbacks() {}
 
 function setupInteractions() {
   document.querySelectorAll(".lang-btn").forEach((btn) => {
